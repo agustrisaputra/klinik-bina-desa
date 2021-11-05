@@ -38,10 +38,9 @@
 
         <nav id="navbar" class="navbar">
             <ul>
-            <li><a class="nav-link scrollto" href="login.html">MASUK</a></li>
-            <li><a class="nav-link scrollto btn" href="register.html">DAFTAR</a></li>
+                <li><a class="nav-link scrollto" href="{{ route('login') }}"><b>MASUK</b></a></li>
+                <li><a class="nav-link scrollto btn" href="{{ route('register') }}"><b>DAFTAR</b></a></li>
             </ul>
-            <i class="bi bi-list mobile-nav-toggle"></i>
         </nav><!-- .navbar -->
 
         </div>
@@ -57,7 +56,7 @@
 						<h1>Klinik Bina Desa</h1>
 						<h2>Layanan Konsultasi Pembinaan dan Pengawasan Penyelenggaraan Administrasi Pemerintahan Desa di Dinas Pemberdayaan Masyarakat dan Desa Kabupaten Karangasem</h2>
 						<div class="text-center text-lg-start">
-                            <a href="login.html" class="btn-get-started scrollto"><span>Ayo Konsultasi</span></a>
+                            <a href="{{ route('home') }}" class="btn-get-started scrollto"><span>Ayo Konsultasi</span></a>
                         </div>
 					</div>
 				</div>
@@ -147,6 +146,7 @@
 	<script src="{{ asset('assets/vendor/aos/aos.js') }}"></script>
 	<script src="{{ asset('assets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 	<script src="{{ asset('assets/vendor/glightbox/js/glightbox.min.js') }}"></script>
+    <script src="{{ asset('assets/vendor/purecounter/purecounter.js') }}"></script>
 	<script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
 
 	<!-- Template Main JS File -->
