@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\VillageController;
 use App\Models\District;
 use App\Models\Village;
 use Illuminate\Support\Facades\Route;
@@ -19,14 +20,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('{district}/get-villages', [VillageController::class, 'getVillage'])->name('get-villages');
+
 Route::get('/home', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('home');
-
-Route::get('{district}/get-villages', function (District $district) {
-    $villages = $district->villages()->get(['id', 'name']);
-
-    return response()->json(['data' => $villages]);
-})->name('get-villages');
 
 require __DIR__.'/auth.php';
