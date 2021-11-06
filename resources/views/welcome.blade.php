@@ -38,8 +38,22 @@
 
         <nav id="navbar" class="navbar">
             <ul>
-                <li><a class="nav-link scrollto" href="{{ route('login') }}"><b>MASUK</b></a></li>
-                <li><a class="nav-link scrollto btn" href="{{ route('register') }}"><b>DAFTAR</b></a></li>
+                @if (Auth::guest())
+                    <li><a class="nav-link scrollto" href="{{ route('login') }}"><b>Masuk</b></a></li>
+                    <li><a class="nav-link scrollto btn" href="{{ route('register') }}"><b>DAFTAR</b></a></li>
+                @else
+                    <li><a class="nav-link scrollto" href="{{ route('logout') }}"><b>KELUAR</b></a></li>
+                    <!-- Authentication -->
+                    <form method="POST" action="{{ route('logout') }}">
+                        @csrf
+
+                        <x-dropdown-link :href="route('logout')"
+                                onclick="event.preventDefault();
+                                            this.closest('form').submit();">
+                            {{ __('Log Out') }}
+                        </x-dropdown-link>
+                    </form>
+                @endif
             </ul>
         </nav><!-- .navbar -->
 

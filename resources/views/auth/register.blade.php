@@ -1,4 +1,6 @@
 <x-guest-layout>
+    <x-slot name="title">Register</x-slot>
+
     <div class="card-header">
         <h4>Daftar</h4>
     </div>
