@@ -10,7 +10,7 @@
                         <h4>Total Pengguna</h4>
                     </div>
                     <div class="card-body">
-                        10
+                        {{ $users }}
                     </div>
                 </div>
             </div>
@@ -25,7 +25,7 @@
                         <h4>Total Pengaduan Masalah</h4>
                     </div>
                     <div class="card-body">
-                        250
+                        {{ $reportCount }}
                     </div>
                 </div>
             </div>
@@ -40,7 +40,7 @@
                         <h4>Total Konsultasi</h4>
                     </div>
                     <div class="card-body">
-                        500
+                        {{ $consultationCount }}
                     </div>
                 </div>
             </div>
@@ -71,30 +71,21 @@
                             <div class="summary">
                                 <div class="summary-item">
                                     <ul class="list-unstyled list-unstyled-border">
-                                        <li class="media">
-                                            <div class="media-body">
-                                                <div class="media-right">
-                                                    <!-- <button class="btn btn-primary" data-toggle="modal" data-target="#detail-approval-modal" title="Detail Approval"><i class="fas fa-bars"></i></button> -->
-                                                    <button class="btn btn-success" title="Lihat Pengaduan"><i class="fas fa-check"></i></button>
+                                        @foreach ($reports as $report)
+                                            <li class="media">
+                                                <div class="media-body">
+                                                    <div class="media-right">
+                                                        <!-- <button class="btn btn-primary" data-toggle="modal" data-target="#detail-approval-modal" title="Detail Approval"><i class="fas fa-bars"></i></button> -->
+                                                        <button class="btn btn-info" title="Lihat Pengaduan"><i class="fas fa-eye"></i></button>
+                                                    </div>
+                                                    <div class="media-title">{{ $report->title }}</div>
+                                                    <div class="media-description">{{ $report->description }}</div>
+                                                    <div class="text-muted text-small">dari {{ $report->user->name }}
+                                                        <div class="bullet"></div> {{ $report->created_at }}
+                                                    </div>
                                                 </div>
-                                                <div class="media-title">Pengaduan 1</div>
-                                                <div class="text-muted text-small">by <a href="#">User 1</a>
-                                                    <div class="bullet"></div> 14-10-2021
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="media">
-                                            <div class="media-body">
-                                                <div class="media-right">
-                                                    <!-- <button class="btn btn-primary" data-toggle="modal" data-target="#detail-approval-modal" title="Detail Approval"><i class="fas fa-bars"></i></button> -->
-                                                    <button class="btn btn-success" title="Lihat Pengaduan"><i class="fas fa-check"></i></button>
-                                                </div>
-                                                <div class="media-title">Pengaduan 2</div>
-                                                <div class="text-muted text-small">by <a href="#">User 2</a>
-                                                    <div class="bullet"></div> 14-10-2021
-                                                </div>
-                                            </div>
-                                        </li>
+                                            </li>
+                                        @endforeach
                                     </ul>
                                     <!-- for empty data -->
                                     <!-- <div class="text-center">
@@ -107,37 +98,22 @@
                             <div class="summary">
                                 <div class="summary-item">
                                     <ul class="list-unstyled list-unstyled-border">
-                                        <li class="media">
-                                            <div class="media-body">
-                                                <div class="media-right">
-                                                    <!-- <button class="btn btn-primary" data-toggle="modal" data-target="#detail-approval-modal" title="Detail Approval"><i class="fas fa-bars"></i></button> -->
-                                                    <button class="btn btn-success" title="Lihat Laporan"><i class="fas fa-check"></i></button>
-                                                    <!-- <button class="btn btn-danger" title="Reject Fleet"><i class="fas fa-times"></i></button> -->
+                                        @foreach ($consultations as $consultation)
+                                            <li class="media">
+                                                <div class="media-body">
+                                                    <div class="media-right">
+                                                        <!-- <button class="btn btn-primary" data-toggle="modal" data-target="#detail-approval-modal" title="Detail Approval"><i class="fas fa-bars"></i></button> -->
+                                                        <button class="btn btn-info" title="Lihat Pengaduan"><i class="fas fa-eye"></i></button>
+                                                    </div>
+                                                    <div class="media-title">{{ $consultation->title }}</div>
+                                                    <div class="media-description">{{ $consultation->description }}</div>
+                                                    <div class="text-muted text-small">dari {{ $consultation->user->name }}
+                                                        <div class="bullet"></div> {{ $consultation->created_at }}
+                                                    </div>
                                                 </div>
-                                                <div class="media-title">Konsultasi 1</div>
-                                                <div class="text-muted text-small">by <a href="#">User 1</a>
-                                                    <div class="bullet"></div> 14-10-2021
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="media">
-                                            <div class="media-body">
-                                                <div class="media-right">
-                                                    <!-- <button class="btn btn-primary" data-toggle="modal" data-target="#detail-approval-modal" title="Detail Approval"><i class="fas fa-bars"></i></button> -->
-                                                    <button class="btn btn-success" title="Lihat Laporan"><i class="fas fa-check"></i></button>
-                                                    <!-- <button class="btn btn-danger" title="Reject Fleet"><i class="fas fa-times"></i></button> -->
-                                                </div>
-                                                <div class="media-title">Konsultasi 2</div>
-                                                <div class="text-muted text-small">by <a href="#">User 2</a>
-                                                    <div class="bullet"></div> 14-10-2021
-                                                </div>
-                                            </div>
-                                        </li>
+                                            </li>
+                                        @endforeach
                                     </ul>
-                                    <!-- for empty data -->
-                                    <!-- <div class="text-center">
-                                        No data available
-                                    </div> -->
                                 </div>
                             </div>
                         </div>
