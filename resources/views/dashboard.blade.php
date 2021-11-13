@@ -1,15 +1,147 @@
 <x-app-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Dashboard') }}
-        </h2>
-    </x-slot>
+    <div class="row">
+        <div class="col-lg-4 col-md-6 col-sm-6 col-12">
+            <div class="card card-statistic-1">
+                <div class="card-icon bg-primary">
+                    <i class="fas fa-users-cog"></i>
+                </div>
+                <div class="card-wrap">
+                    <div class="card-header">
+                        <h4>Total Pengguna</h4>
+                    </div>
+                    <div class="card-body">
+                        10
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-6 col-12">
+            <div class="card card-statistic-1">
+                <div class="card-icon bg-warning">
+                <i class="fas fa-bullhorn"></i>
+                </div>
+                <div class="card-wrap">
+                    <div class="card-header">
+                        <h4>Total Pengaduan Masalah</h4>
+                    </div>
+                    <div class="card-body">
+                        250
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-6 col-12">
+            <div class="card card-statistic-1">
+                <div class="card-icon bg-primary">
+                <i class="fas fa-broadcast-tower"></i>
+                </div>
+                <div class="card-wrap">
+                    <div class="card-header">
+                        <h4>Total Konsultasi</h4>
+                    </div>
+                    <div class="card-body">
+                        500
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 bg-white border-b border-gray-200">
-                    You're logged in!
+    <div class="row">
+        <div class="col-md-12 col-12">
+            <div class="card">
+                <div class="card-header">
+                    <h4>Laporan Terbaru</h4>
+                </div>
+                <div class="card-body">
+                    <ul class="nav nav-pills nav-fill" id="myTab3" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active show" id="customer-approval-btn-tab" data-toggle="tab" href="#customer-approval-tab" role="tab" aria-controls="customer-approval-btn-tab" aria-selected="true">
+                                Pengaduan Masalah
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="fleet-approval-btn-tab" data-toggle="tab" href="#fleet-approval-tab" role="tab" aria-controls="fleet-approval-btn-tab" aria-selected="false">
+                            Konsultasi Tatap Muka
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="tab-content" id="myTabContent2">
+                        <div class="tab-pane fade active show" id="customer-approval-tab" role="tabpanel" aria-labelledby="customer-approval-btn-tab">
+                            <div class="summary">
+                                <div class="summary-item">
+                                    <ul class="list-unstyled list-unstyled-border">
+                                        <li class="media">
+                                            <div class="media-body">
+                                                <div class="media-right">
+                                                    <!-- <button class="btn btn-primary" data-toggle="modal" data-target="#detail-approval-modal" title="Detail Approval"><i class="fas fa-bars"></i></button> -->
+                                                    <button class="btn btn-success" title="Lihat Pengaduan"><i class="fas fa-check"></i></button>
+                                                </div>
+                                                <div class="media-title">Pengaduan 1</div>
+                                                <div class="text-muted text-small">by <a href="#">User 1</a>
+                                                    <div class="bullet"></div> 14-10-2021
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="media">
+                                            <div class="media-body">
+                                                <div class="media-right">
+                                                    <!-- <button class="btn btn-primary" data-toggle="modal" data-target="#detail-approval-modal" title="Detail Approval"><i class="fas fa-bars"></i></button> -->
+                                                    <button class="btn btn-success" title="Lihat Pengaduan"><i class="fas fa-check"></i></button>
+                                                </div>
+                                                <div class="media-title">Pengaduan 2</div>
+                                                <div class="text-muted text-small">by <a href="#">User 2</a>
+                                                    <div class="bullet"></div> 14-10-2021
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                    <!-- for empty data -->
+                                    <!-- <div class="text-center">
+                                        No data available
+                                    </div> -->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="fleet-approval-tab" role="tabpanel" aria-labelledby="fleet-approval-btn-tab">
+                            <div class="summary">
+                                <div class="summary-item">
+                                    <ul class="list-unstyled list-unstyled-border">
+                                        <li class="media">
+                                            <div class="media-body">
+                                                <div class="media-right">
+                                                    <!-- <button class="btn btn-primary" data-toggle="modal" data-target="#detail-approval-modal" title="Detail Approval"><i class="fas fa-bars"></i></button> -->
+                                                    <button class="btn btn-success" title="Lihat Laporan"><i class="fas fa-check"></i></button>
+                                                    <!-- <button class="btn btn-danger" title="Reject Fleet"><i class="fas fa-times"></i></button> -->
+                                                </div>
+                                                <div class="media-title">Konsultasi 1</div>
+                                                <div class="text-muted text-small">by <a href="#">User 1</a>
+                                                    <div class="bullet"></div> 14-10-2021
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="media">
+                                            <div class="media-body">
+                                                <div class="media-right">
+                                                    <!-- <button class="btn btn-primary" data-toggle="modal" data-target="#detail-approval-modal" title="Detail Approval"><i class="fas fa-bars"></i></button> -->
+                                                    <button class="btn btn-success" title="Lihat Laporan"><i class="fas fa-check"></i></button>
+                                                    <!-- <button class="btn btn-danger" title="Reject Fleet"><i class="fas fa-times"></i></button> -->
+                                                </div>
+                                                <div class="media-title">Konsultasi 2</div>
+                                                <div class="text-muted text-small">by <a href="#">User 2</a>
+                                                    <div class="bullet"></div> 14-10-2021
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                    <!-- for empty data -->
+                                    <!-- <div class="text-center">
+                                        No data available
+                                    </div> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
