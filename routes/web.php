@@ -22,8 +22,4 @@ Route::post('/report', [HomeController::class, 'storeReport'])->name('report');
 
 Route::get('{district}/get-villages', [VillageController::class, 'getVillage'])->name('get-villages');
 
-// Route::get('/home', function () {
-//     return view('dashboard');
-// })->middleware(['auth'])->name('home');
-
 require __DIR__.'/auth.php';

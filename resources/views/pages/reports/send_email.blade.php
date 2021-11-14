@@ -1,7 +1,7 @@
 <div class="modal fade" tabindex="-1" role="dialog" id="email_form">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
-            <form action="{{ route('kirim-email', $report->id) }}" method="POST">
+            <form action="{{ route('admin.kirim-email', $report->id) }}" method="POST">
                 @csrf
                 <div class="modal-header">
                     <h5 class="modal-title">

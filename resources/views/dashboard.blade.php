@@ -76,7 +76,7 @@
                                                 <li class="media">
                                                     <div class="media-body">
                                                         <div class="media-right">
-                                                            <a href="{{ route('detail-pengaduan', $report->id) }}" class="btn btn-info" title="Lihat Pengaduan"><i class="fas fa-eye"></i></a>
+                                                            <a href="{{ route('admin.detail-pengaduan', $report->id) }}" class="btn btn-info" title="Lihat Pengaduan"><i class="fas fa-eye"></i></a>
                                                         </div>
                                                         <div class="media-title">{{ $report->title }}</div>
                                                         <div class="text-muted text-small">Pelapor: {{ $report->pelapor }}
@@ -106,7 +106,7 @@
                                                 <li class="media">
                                                     <div class="media-body">
                                                         <div class="media-right">
-                                                            <a href="{{ route('detail-konsultasi', $consultation->id) }}" class="btn btn-info" title="Lihat Pengaduan"><i class="fas fa-eye"></i></a>
+                                                            <a href="{{ route('admin.detail-konsultasi', $consultation->id) }}" class="btn btn-info" title="Lihat Pengaduan"><i class="fas fa-eye"></i></a>
                                                         </div>
                                                         <div class="media-title">{{ $consultation->title }}</div>
                                                         {{-- <div class="media-description">{{ $consultation->description }}</div> --}}

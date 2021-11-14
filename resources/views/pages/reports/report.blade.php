@@ -7,7 +7,7 @@
     <x-slot name="header_content">
         <h1>Pengaduan Masalah</h1>
         <div class="section-header-breadcrumb">
-            <div class="breadcrumb-item active"><a href="{{ route('dashboard') }}">Dashboard</a></div>
+            <div class="breadcrumb-item active"><a href="{{ route('admin.dashboard') }}">Dashboard</a></div>
             <div class="breadcrumb-item">Pengaduan Masalah</div>
         </div>
     </x-slot>
@@ -50,7 +50,7 @@
                 let table = $('#pengaduan').DataTable({
                     processing: true,
                     serverSide: true,
-                    ajax: "{{ route('pengaduan') }}",
+                    ajax: "{{ route('admin.pengaduan') }}",
                     columns: [
                         {data: 'DT_RowIndex', name: 'DT_RowIndex'},
                         {data: 'title', name: 'name'},

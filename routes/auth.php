@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\Auth\AuthenticatedSessionController as AdminAuthenticatedSessionController;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\Auth\ConfirmablePasswordController;
 use App\Http\Controllers\Auth\EmailVerificationNotificationController;
@@ -23,6 +24,14 @@ Route::get('/login', [AuthenticatedSessionController::class, 'create'])
 
 Route::post('/login', [AuthenticatedSessionController::class, 'store'])
                 ->middleware('guest');
+
+Route::get('/admin/login', [AdminAuthenticatedSessionController::class, 'create'])
+                // ->middleware('admin:guest')
+                ->name('admin.login');
+
+Route::post('/admin/login', [AdminAuthenticatedSessionController::class, 'store']);
+                // ->middleware('admin:guest');
+                // ->name('admin.login');
 
 // Route::get('/forgot-password', [PasswordResetLinkController::class, 'create'])
 //                 ->middleware('guest')
@@ -62,3 +71,7 @@ Route::post('/login', [AuthenticatedSessionController::class, 'store'])
 Route::post('/logout', [AuthenticatedSessionController::class, 'destroy'])
                 ->middleware('auth')
                 ->name('logout');
+
+Route::post('/admin/logout', [AdminAuthenticatedSessionController::class, 'destroy'])
+                ->middleware('admin')
+                ->name('admin.logout');

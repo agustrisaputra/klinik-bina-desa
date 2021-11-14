@@ -24,7 +24,7 @@ class ReportController extends Controller
             return DataTables::of($data)
                 ->addIndexColumn()
                 ->addColumn('action', function($row){
-                    $action = route('detail-pengaduan', $row->id);
+                    $action = route('admin.detail-pengaduan', $row->id);
                     $actionBtn = "<a href='{$action}' class='btn btn-primary' title='Lihat Data'>Lihat Laporan</a>";
                     return $actionBtn;
                 })
@@ -55,7 +55,7 @@ class ReportController extends Controller
             return DataTables::of($data)
                 ->addIndexColumn()
                 ->addColumn('action', function($row){
-                    $action = route('detail-konsultasi', $row->id);
+                    $action = route('admin.detail-konsultasi', $row->id);
                     $actionBtn = "<a href='{$action}' class='btn btn-primary' title='Lihat Data'>Lihat Laporan</a>";
                     return $actionBtn;
                 })

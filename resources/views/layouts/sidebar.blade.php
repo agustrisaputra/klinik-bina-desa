@@ -1,24 +1,24 @@
 <div class="main-sidebar">
     <aside id="sidebar-wrapper">
         <div class="sidebar-brand">
-            <a href="{{ route('dashboard') }}">Klinik Bina Desa</a>
+            <a href="{{ route('admin.dashboard') }}">Klinik Bina Desa</a>
         </div>
         <div class="sidebar-brand sidebar-brand-sm">
-            <a href="{{ route('dashboard') }}"><img src="{{ asset('assets/img/logo.png') }}" alt="Karangasem" width="40" height="40"></a>
+            <a href="{{ route('admin.dashboard') }}"><img src="{{ asset('assets/img/logo.png') }}" alt="Karangasem" width="40" height="40"></a>
         </div>
         <ul class="sidebar-menu">
-            <li class="nav-item {{ request()->routeIs('dashboard') ? 'active' : '' }}">
-                <a href="{{ route('dashboard') }}" class="nav-link"><i class="fas fa-th"></i><span>Dashboard</span></a>
+            <li class="nav-item {{ request()->routeIs('admin.dashboard') ? 'active' : '' }}">
+                <a href="{{ route('admin.dashboard') }}" class="nav-link"><i class="fas fa-th"></i><span>Dashboard</span></a>
             </li>
-            <li class="nav-item {{ request()->routeIs('pengguna') ? 'active' : '' }}">
-                <a href="{{ route('pengguna') }}" class="nav-link"><i class="fas fa-users"></i><span>Pengguna</span></a>
+            <li class="nav-item {{ request()->routeIs('admin.pengguna') ? 'active' : '' }}">
+                <a href="{{ route('admin.pengguna') }}" class="nav-link"><i class="fas fa-users"></i><span>Pengguna</span></a>
             </li>
             <li class="menu-header">Kelola Laporan</li>
-            <li class="nav-item {{ request()->routeIs('pengaduan') ? 'active' : '' }}">
-                <a href="{{ route('pengaduan') }}" class="nav-link"><i class="fas fa-bullhorn"></i><span>Pengaduan Masalah</span></a>
+            <li class="nav-item {{ request()->routeIs('admin.pengaduan') ? 'active' : '' }}">
+                <a href="{{ route('admin.pengaduan') }}" class="nav-link"><i class="fas fa-bullhorn"></i><span>Pengaduan Masalah</span></a>
             </li>
-            <li class="nav-item {{ request()->routeIs('konsultasi') ? 'active' : '' }}">
-                <a href="{{ route('konsultasi') }}" class="nav-link"><i class="fas fa-broadcast-tower"></i></i><span>Konsultasi Tatap Muka</span></a>
+            <li class="nav-item {{ request()->routeIs('admin.konsultasi') ? 'active' : '' }}">
+                <a href="{{ route('admin.konsultasi') }}" class="nav-link"><i class="fas fa-broadcast-tower"></i></i><span>Konsultasi Tatap Muka</span></a>
             </li>
             {{-- <li class="menu-header">Kelola Data Pendukung</li>
             <li class="nav-item dropdown">

@@ -9,14 +9,21 @@
     <ul class="navbar-nav navbar-right">
         <li class="dropdown">
             <a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle nav-link-lg nav-link-user">
-                <div class="d-sm-none d-lg-inline-block">Hi, Admin
+                <div class="d-sm-none d-lg-inline-block">Hi, {{ Auth::user()->name }}
                     <!-- To be replaced with dynamic data -->
                 </div>
             </a>
             <div class="dropdown-menu dropdown-menu-right">
-                <a href="#" class="dropdown-item has-icon text-danger">
-                    <i class="fas fa-sign-out-alt"></i> Logout
-                </a>
+                <!-- Authentication -->
+                <form method="POST" action="{{ route('admin.logout') }}">
+                    @csrf
+                    <x-dropdown-link :href="route('admin.logout')"
+                    class="dropdown-item has-icon text-danger"
+                            onclick="event.preventDefault();
+                                        this.closest('form').submit();">
+                        <i class="fas fa-sign-out-alt"></i> {{ __('KELUAR') }}
+                    </x-dropdown-link>
+                </form>
             </div>
         </li>
     </ul>

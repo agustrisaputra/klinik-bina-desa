@@ -2,8 +2,8 @@
     <x-slot name="header_content">
         <h1>Konsultasi</h1>
         <div class="section-header-breadcrumb">
-            <div class="breadcrumb-item active"><a href="{{ route('dashboard') }}">Dashboard</a></div>
-            <div class="breadcrumb-item active"><a href="{{ route('konsultasi') }}">Konsultasi</a></div>
+            <div class="breadcrumb-item active"><a href="{{ route('admin.dashboard') }}">Dashboard</a></div>
+            <div class="breadcrumb-item active"><a href="{{ route('admin.konsultasi') }}">Konsultasi</a></div>
             <div class="breadcrumb-item">{{ $report->title }}</div>
         </div>
     </x-slot>
@@ -37,7 +37,7 @@
                 </div>
                 @if (!$report->confirmed)
                     <div class="form-group float-right">
-                        <form action="{{ route('konfirmasi', $report->id) }}" method="POST">
+                        <form action="{{ route('admin.konfirmasi', $report->id) }}" method="POST">
                             @method('patch')
                             @csrf
                             <button type="submit" class="btn btn-save btn-info">Sudah Ditanggapi</button>
