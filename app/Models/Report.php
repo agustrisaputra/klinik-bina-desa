@@ -40,6 +40,17 @@ class Report extends Model
     }
 
     /**
+     * Get the pelapor
+     *
+     * @param  string  $value
+     * @return string
+     */
+    public function getPelaporAttribute($value)
+    {
+        return $this->user->name . ', ' . $this->user->position->name . ' desa ' . $this->user->village->name;
+    }
+
+    /**
      * Get the user that owns the Report
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo

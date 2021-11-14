@@ -7,7 +7,7 @@
     <x-slot name="header_content">
         <h1>Pengaduan Masalah</h1>
         <div class="section-header-breadcrumb">
-            <div class="breadcrumb-item active"><a href="{{ route('pengguna') }}">Dashboard</a></div>
+            <div class="breadcrumb-item active"><a href="{{ route('dashboard') }}">Dashboard</a></div>
             <div class="breadcrumb-item">Pengaduan Masalah</div>
         </div>
     </x-slot>
@@ -28,6 +28,7 @@
                                 <th width="250px">Judul laporan</th>
                                 {{-- <th width="250px">Isi Laporan</th> --}}
                                 <th width="250px">Pelapor</th>
+                                <th width="250px">Konfirmasi</th>
                                 <th width="250px">Action</th>
                             </tr>
                         </thead>
@@ -53,8 +54,8 @@
                     columns: [
                         {data: 'DT_RowIndex', name: 'DT_RowIndex'},
                         {data: 'title', name: 'name'},
-                        // {data: 'description', name: 'phone'},
-                        {data: 'user.name', name: 'email'},
+                        {data: 'pelapor', name: 'pelapor'},
+                        {data: 'confirmed', name: 'confirmed'},
                         {
                             data: 'action',
                             name: 'action',

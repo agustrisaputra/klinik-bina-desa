@@ -31,6 +31,10 @@
             </div>
         </div>
 
+        @if (isset($modal))
+            {{ $modal }}
+        @endif
+
         @include('layouts.script')
     </body>
 </html>

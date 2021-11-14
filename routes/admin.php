@@ -31,10 +31,12 @@ Route::prefix('admin')
         ]),
         Route::prefix('pengaduan')->group(fn() => [
             Route::get('', [ReportController::class, 'report'])->name('pengaduan'),
-            // Route::get('{user}', [UserController::class, 'show'])->name('detail-pengguna'),
+            Route::get('{report}', [ReportController::class, 'getReport'])->name('detail-pengaduan'),
         ]),
         Route::prefix('konsultasi')->group(fn() => [
             Route::get('', [ReportController::class, 'consultation'])->name('konsultasi'),
-            // Route::get('{user}', [UserController::class, 'show'])->name('detail-pengguna'),
+            Route::get('{report}', [ReportController::class, 'getConsultation'])->name('detail-konsultasi'),
+            Route::post('{report}/kirim-email', [ReportController::class, 'sendEmail'])->name('kirim-email'),
+            Route::patch('{report}/konfirmasi', [ReportController::class, 'update'])->name('konfirmasi'),
         ]),
     ]);

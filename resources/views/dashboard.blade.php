@@ -71,26 +71,29 @@
                             <div class="summary">
                                 <div class="summary-item">
                                     <ul class="list-unstyled list-unstyled-border">
-                                        @foreach ($reports as $report)
-                                            <li class="media">
-                                                <div class="media-body">
-                                                    <div class="media-right">
-                                                        <!-- <button class="btn btn-primary" data-toggle="modal" data-target="#detail-approval-modal" title="Detail Approval"><i class="fas fa-bars"></i></button> -->
-                                                        <button class="btn btn-info" title="Lihat Pengaduan"><i class="fas fa-eye"></i></button>
+                                        @if ($reports->count() > 0)
+                                            @foreach ($reports as $report)
+                                                <li class="media">
+                                                    <div class="media-body">
+                                                        <div class="media-right">
+                                                            <a href="{{ route('detail-pengaduan', $report->id) }}" class="btn btn-info" title="Lihat Pengaduan"><i class="fas fa-eye"></i></a>
+                                                        </div>
+                                                        <div class="media-title">{{ $report->title }}</div>
+                                                        <div class="text-muted text-small">Pelapor: {{ $report->pelapor }}
+                                                            <div class="bullet"></div> {{ $report->created_at }}
+                                                        </div>
                                                     </div>
-                                                    <div class="media-title">{{ $report->title }}</div>
-                                                    <div class="media-description">{{ $report->description }}</div>
-                                                    <div class="text-muted text-small">dari {{ $report->user->name }}
-                                                        <div class="bullet"></div> {{ $report->created_at }}
-                                                    </div>
+                                                </li>
+                                            @endforeach
+                                        @else
+                                            <div class="empty-state" data-height="400" style="height: 400px;">
+                                                <div class="empty-state-icon">
+                                                  <i class="fas fa-question"></i>
                                                 </div>
-                                            </li>
-                                        @endforeach
+                                                <h2>Belum ada laporan baru</h2>
+                                            </div>
+                                        @endif
                                     </ul>
-                                    <!-- for empty data -->
-                                    <!-- <div class="text-center">
-                                        No data available
-                                    </div> -->
                                 </div>
                             </div>
                         </div>
@@ -98,21 +101,29 @@
                             <div class="summary">
                                 <div class="summary-item">
                                     <ul class="list-unstyled list-unstyled-border">
-                                        @foreach ($consultations as $consultation)
-                                            <li class="media">
-                                                <div class="media-body">
-                                                    <div class="media-right">
-                                                        <!-- <button class="btn btn-primary" data-toggle="modal" data-target="#detail-approval-modal" title="Detail Approval"><i class="fas fa-bars"></i></button> -->
-                                                        <button class="btn btn-info" title="Lihat Pengaduan"><i class="fas fa-eye"></i></button>
+                                        @if ($consultations->count() > 0)
+                                            @foreach ($consultations as $consultation)
+                                                <li class="media">
+                                                    <div class="media-body">
+                                                        <div class="media-right">
+                                                            <a href="{{ route('detail-konsultasi', $consultation->id) }}" class="btn btn-info" title="Lihat Pengaduan"><i class="fas fa-eye"></i></a>
+                                                        </div>
+                                                        <div class="media-title">{{ $consultation->title }}</div>
+                                                        {{-- <div class="media-description">{{ $consultation->description }}</div> --}}
+                                                        <div class="text-muted text-small">Pelapor: {{ $consultation->pelapor }}
+                                                            <div class="bullet"></div> {{ $consultation->created_at }}
+                                                        </div>
                                                     </div>
-                                                    <div class="media-title">{{ $consultation->title }}</div>
-                                                    <div class="media-description">{{ $consultation->description }}</div>
-                                                    <div class="text-muted text-small">dari {{ $consultation->user->name }}
-                                                        <div class="bullet"></div> {{ $consultation->created_at }}
-                                                    </div>
+                                                </li>
+                                            @endforeach
+                                        @else
+                                            <div class="empty-state" data-height="400" style="height: 400px;">
+                                                <div class="empty-state-icon">
+                                                  <i class="fas fa-question"></i>
                                                 </div>
-                                            </li>
-                                        @endforeach
+                                                <h2>Belum ada laporan baru</h2>
+                                            </div>
+                                        @endif
                                     </ul>
                                 </div>
                             </div>

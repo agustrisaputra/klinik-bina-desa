@@ -5,6 +5,7 @@
 <link rel="stylesheet" type="text/css" href="{{ asset('assets/stisla/css/style.css') }}">
 <link rel="stylesheet" type="text/css" href="{{ asset('assets/stisla/css/components.css') }}">
 <link rel="stylesheet" type="text/css" href="{{ asset('assets/stisla/css/style.css?v=20200801') }}">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.10/dist/sweetalert2.min.css">
 
 @if (isset($style))
     {{ $style }}

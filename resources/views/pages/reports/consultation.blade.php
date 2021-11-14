@@ -7,7 +7,7 @@
     <x-slot name="header_content">
         <h1>Konsultasi Tatap Muka</h1>
         <div class="section-header-breadcrumb">
-            <div class="breadcrumb-item active"><a href="{{ route('pengguna') }}">Dashboard</a></div>
+            <div class="breadcrumb-item active"><a href="{{ route('dashboard') }}">Dashboard</a></div>
             <div class="breadcrumb-item">Konsultasi Tatap Muka</div>
         </div>
     </x-slot>
@@ -30,6 +30,7 @@
                                 <th width="250px">Bidang</th>
                                 <th width="250px">Tanggal Permintaan</th>
                                 <th width="250px">Pelapor</th>
+                                <th width="250px">Konfirmasi</th>
                                 <th width="250px">Action</th>
                             </tr>
                         </thead>
@@ -58,7 +59,8 @@
                         // {data: 'description', name: 'phone'},
                         {data: 'division.name', name: 'division'},
                         {data: 'date', name: 'date'},
-                        {data: 'user.name', name: 'user'},
+                        {data: 'pelapor', name: 'pelapor'},
+                        {data: 'confirmed', name: 'confirmed'},
                         {
                             data: 'action',
                             name: 'action',
