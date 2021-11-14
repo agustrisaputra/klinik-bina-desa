@@ -10,6 +10,8 @@
 
         <title>{{ $title }} &mdash; Klinik Bina Desa</title>
 
+        <link rel="icon" href="{{ asset('assets/img/logo.png') }}" type="image/x-icon">
+
         <!-- General CSS Files -->
         <link rel="stylesheet" href="{{ asset('assets/stisla/modules/bootstrap.min.css') }}">
         <link rel="stylesheet" href="{{ asset('assets/stisla/modules/fontawesome.min.css') }}">
