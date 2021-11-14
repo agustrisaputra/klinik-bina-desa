@@ -27,6 +27,12 @@
                     <label for="company-address">Pelapor</label>
                     <input type="text" class="form-control" id="company-address" value="{{ $report->pelapor }}" readonly>
                 </div>
+                @if(!empty($report->file))
+                    <div class="form-group">
+                        <label for="company-address">File</label>
+                        <a href="{{ route('admin.file', $report->id) }}" target="__blank">{{ $report->file }}</a>
+                    </div>
+                @endif
                 @if (!$report->confirmed)
                     <div class="form-group float-right">
                         <form action="{{ route('admin.konfirmasi', $report->id) }}" method="POST">

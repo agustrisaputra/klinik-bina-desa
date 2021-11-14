@@ -36,6 +36,7 @@ Route::prefix('admin')
         Route::prefix('konsultasi')->group(fn() => [
             Route::get('', [ReportController::class, 'consultation'])->name('konsultasi'),
             Route::get('{report}', [ReportController::class, 'getConsultation'])->name('detail-konsultasi'),
+            Route::get('{report}/file', [ReportController::class, 'getFile'])->name('file'),
             Route::post('{report}/kirim-email', [ReportController::class, 'sendEmail'])->name('kirim-email'),
             Route::patch('{report}/konfirmasi', [ReportController::class, 'update'])->name('konfirmasi'),
         ]),

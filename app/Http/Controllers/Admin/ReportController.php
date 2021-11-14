@@ -8,7 +8,6 @@ use App\Models\Report;
 use Illuminate\Http\Request;
 use DataTables;
 use Illuminate\Support\Facades\Mail;
-use Symfony\Component\HttpFoundation\Response;
 
 class ReportController extends Controller
 {
@@ -108,5 +107,13 @@ class ReportController extends Controller
         return response()->json([
             'data' => ['message' => 'Tanggapan berhasil dikirim via email']
         ]);
+    }
+
+    public function getFile(Report $report)
+    {
+        $file = $report->file;
+        $path = storage_path('app/public/files/' . $file);
+
+        return response()->file($path);
     }
 }
