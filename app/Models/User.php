@@ -67,7 +67,7 @@ class User extends Authenticatable
      */
     public function getPhoneNumberAttribute()
     {
-        return preg_replace('/^(\+62|0|62)/', '', $this->attributes['phone']);;
+        return preg_replace('/^(\+62|0|62)/', '+62', $this->attributes['phone']);;
     }
 
     /**
