@@ -44,7 +44,7 @@
                 @endif
                 <div class="form-group float-right">
                     <button class="btn btn-save btn-primary" data-toggle="modal" data-target="#email_form" title="Tanggapi">Tanggapi Lewat Email</button>
-                    <a class="btn btn-save btn-success" href="whatsapp://send?phone={{ $report->user->phone }}&text=">Tanggapi Lewat WhatsApp</a>
+                    <a class="btn btn-save btn-success" href="whatsapp://send?phone={{ $report->user->phone_number }}&text=">Tanggapi Lewat WhatsApp</a>
                 </div>
             </div>
         </div>

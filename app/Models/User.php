@@ -60,6 +60,17 @@ class User extends Authenticatable
     }
 
     /**
+     * Get the phone number
+     *
+     * @param  string  $value
+     * @return string
+     */
+    public function getPhoneNumberAttribute()
+    {
+        return preg_replace('/^(\+62|0|62)/', '', $this->attributes['phone']);;
+    }
+
+    /**
      * Get the position that owns the UserOffice
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
