@@ -20,6 +20,7 @@ class ReportController extends Controller
                         ->orderByDesc('created_at')
                         ->get();
 
+
             return DataTables::of($data)
                 ->addIndexColumn()
                 ->addColumn('action', function($row){
